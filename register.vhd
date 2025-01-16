@@ -3,10 +3,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity REGLD_SR is -- Register with load and right-shift
-  generic(nb_bits : natural := 32); -- stored data bit width
-  Port ( clk, reset, load, shift_left, shift_right : in std_logic;
+  generic(nb_bits : natural := 64); -- stored data bit width
+  Port ( clk, reset, load, sl, sr : in std_logic;
          nb_dec: in integer;
          D: in std_logic_vector( nb_bits-1 downto 0);
+	 Din_tot: in std_logic_vector( nb_bits-1 downto 0);
          -- Dout : out std_logic; -- LSB output
          Q: out std_logic_vector(nb_bits-1 downto 0)
   );
@@ -19,19 +20,22 @@ signal Din : std_logic_vector(nb_dec downto 0); -- right/left shift MSB/LSB inpu
 
 begin
 
- P1 : process(clk, reset)
+Din <= Din_tot(nb_dec downto 0);
+
+ P1 : process(clk, reset, sr, sl)
 
   begin
-
     if reset='1' then
       Sint <= (others => '0');
     elsif clk'event and clk='1' then
       if load = '1' then
         Sint <= D;
-      elsif shift_right = '1' then
+      elsif sr = '1' then
         Sint <= Din & Sint(nb_bits-1 downto nb_dec);
-      elsif shift_left = '1' then
+      elsif sl = '1' then
         Sint <= Sint(nb_bits-1-nb_dec downto 0) & Din;
+      elsif ssl = '1' then -- ssl : décalage à gauche signé
+        Sint <= Sint(
       end if;
     end if;
  end process P1;

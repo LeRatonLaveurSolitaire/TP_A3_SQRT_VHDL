@@ -2,41 +2,95 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-architecture seq_det of mult_seq is
-  signal sig_ld, sig_raz, sig_sh, sig_selp, sig_RB0, sig_RC0, zero, sig_ldp, sig_dop, sig_doa, sig_cout : std_logic;
-  signal sig_add, sig_RP : std_logic_vector(n downto 0);
-  signal sig_sum, sig_RA, sig_RB, sig_C, sig_RC : std_logic_vector(n-1 downto 0);
+entity sqrt_seq is
+generic (
+        n : integer := 32
+    );
+Port(
+     clk, reset, start : in STD_LOGIC;
+     A : in std_logic_vector(2*n-1 downto 0)
+     );
+end sqrt_seq;
+
+architecture seq_det of sqrt_seq is
+  signal sr, sl, sig_carry, load : std_logic;
+  signal D : unsigned(2*n-1 downto 0);
+  signal Z : unsigned(n-1 downto 0); 
+  signal R : signed(2*n-1 downto 0);
+  signal res_inter : signed(2*n-1 downto 0);
+  signal sig_A, sig_B : std_logic_vector(n-1 downto 0);
+  signal sig_sum : std_logic_vector(2*n-1 downto 0);
+  signal nb_decD, nb_decZ, nb_decR : integer;
+  signal 
+  
 begin
-  zero <= '0';
-  sig_add <= sig_cout & sig_sum;
-  sig_C(n-1) <= '1';
-  sig_C(n-2 downto 0) <= ( others => '0');
-  S <= sig_RP(n-1 downto 0) & sig_RB;
- 
-  MUX1: entity work.mux2_1(proced)
-        port map(I0 => zero, I1 => sig_RB0, sel => sig_selp, S => sig_ldp);
-  REGB: entity work.regld_sr(proced)
-        generic map(nb_bits => n)
-        port map(clk => clk, reset => sig_raz, load => sig_ld, D => B, Q => sig_RB, shift => sig_sh, din => sig_dop, dout => sig_RB0);
-  REGA: entity work.regld_sr(proced)
-        generic map(nb_bits => n)
-        port map(clk => clk, reset => sig_raz, load => sig_ld, D => A, Q => sig_RA, shift => zero, din => zero, dout => sig_doa);
-  REGC: entity work.regld_sr(proced)
-        generic map(nb_bits => n)
-        port map(clk => clk, reset => sig_raz, load => sig_ld, D => sig_C, Q => sig_RC, shift => sig_sh, din => zero, dout => sig_RC0);
-  REGP: entity work.regld_sr(proced)
-        generic map(nb_bits => n+1)
-        port map(clk => clk, reset => sig_raz, load => sig_ldp, D => sig_add, Q => sig_RP, shift => sig_sh, din => zero, dout => sig_dop);
-  ADDER: entity work.adder(dataflow)
-        generic map(nb_bits => n)
-        port map(A => sig_RA, B => sig_RP(n-1 downto 0), S => sig_sum, Cout => sig_cout);
-  CU: entity work.control_unit(proced)
-        port map(clk => clk, reset => reset,
-                start => start,
-                lb => sig_RC0,
-                done => done,
-                ld => sig_ld,
-                sh => sig_sh,
-                raz => sig_raz,
-                selp => sig_selp);
+ -- Instance de l'unité de contrôle
+    CU: entity work.control_unit(proced)
+        Port map (
+            clk => clk,
+            load => load,
+            reset => reset,
+            start => start,
+            done => done,
+            init => init,
+	          sr => sr,
+	          sl => sl,
+	          
+        );
+
+ -- Instantiation register D
+	Reg_D: entity work.REGLD_SR(proced)
+        Port map (
+          clk => clk,
+          reset => reset,
+          load => load,
+          sl => sl,
+          sr => sr,
+          nb_dec => nb_decD,
+          D => D,
+          Din => Din,
+          Q => Q
+        );
+        
+ -- Instantiation register Z
+	Reg_Z: entity work.REGLD_SR(proced)
+        Port map (
+          clk => clk,
+          reset => reset,
+          load => load,
+          sl => sl,
+          sr => sr,
+          nb_dec => nb_dec,
+          D => D,
+          Din => Din,
+          Q => Q
+        );
+        
+ -- Instantiation register R
+	Reg_R: entity work.REGLD_SR(proced)
+        Port map (
+          clk => clk,
+          reset => reset,
+          load => load,
+          sl => sl,
+          sr => sr,
+          nb_dec => nb_dec,
+          D => D,
+          Din => Din,
+          Q => Q
+        );
+
+ -- Instantiation adder
+  Adder: entity work.generic_adder(behavioral)
+      Generic map (N => n)
+      Port map (
+        a => sig_A, 
+        b => sig_B,         
+        subber => sig_add, 
+        result => sig_sum, 
+        carry_out => sig_carry        
+      );
+
+
+
 end architecture seq_det;
