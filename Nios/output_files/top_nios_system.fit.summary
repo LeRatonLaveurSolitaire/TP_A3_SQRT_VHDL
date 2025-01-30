@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Jan 30 10:08:01 2025
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : top_nios_system
+Top-level Entity Name : top_nios_system
+Family : Cyclone II
+Device : EP2C20F484C7
+Timing Models : Final
+Total logic elements : 4,589 / 18,752 ( 24 % )
+    Total combinational functions : 4,093 / 18,752 ( 22 % )
+    Dedicated logic registers : 2,907 / 18,752 ( 16 % )
+Total registers : 2975
+Total pins : 208 / 315 ( 66 % )
+Total virtual pins : 0
+Total memory bits : 178,304 / 239,616 ( 74 % )
+Embedded Multiplier 9-bit elements : 4 / 52 ( 8 % )
+Total PLLs : 1 / 4 ( 25 % )
