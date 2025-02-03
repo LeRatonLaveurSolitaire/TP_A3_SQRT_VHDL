@@ -1,0 +1,97 @@
+C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_fast.vhd {1 {vcom -work work -2002 -explicit C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_fast.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity sqrt
+-- Compiling architecture arch of sqrt
+
+} {} {}} C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd {2 {vcom -work work -2002 -explicit C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity testbench
+-- Compiling architecture test_sqrt_small of testbench
+-- Loading entity sqrt_seq
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(24): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(24): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(24): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd(24): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/simple_adder.vhd {1 {vcom -work work -2002 -explicit C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/simple_adder.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity generic_adder
+-- Compiling architecture Behavioral of generic_adder
+
+} {} {}} C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/register.vhd {2 {vcom -work work -2002 -explicit {C:\Users\Thomas\Documents\GitHub\TP_A3_SQRT_VHDL\SQRT_VHDL\register.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity REGLD_SR
+-- Compiling architecture proced of REGLD_SR
+** Warning: [9] C:\Users\Thomas\Documents\GitHub\TP_A3_SQRT_VHDL\SQRT_VHDL\register.vhd(19): (vcom-1013) Subtype of "ieee.std_logic_1164.STD_LOGIC_VECTOR" depends on value of signal "nb_dec".
+
+
+} {} {}} C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd {2 {vcom -work work -2002 -explicit C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity testbench
+-- Compiling architecture test_sqrt_fast of testbench
+-- Loading entity sqrt
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(21): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(21): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(21): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(21): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(21): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(21): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(21): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(21): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(21): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd(22): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_small.vhd {1 {vcom -work work -2002 -explicit C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_small.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity sqrt_seq
+-- Compiling architecture arch of sqrt_seq
+-- Loading entity control_unit
+-- Loading entity generic_adder
+
+} {} {}}

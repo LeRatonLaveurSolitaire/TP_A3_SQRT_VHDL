@@ -19,8 +19,7 @@ end entity sqrt;
 
 
 architecture arch of sqrt is
-    signal D : unsigned(2*n - 1 downto 0);
-    
+    signal D : unsigned(2*n - 1 downto 0);   
     signal Z : unsigned(n - 1 downto 0);
     signal CNT : unsigned(n - 1 downto 0);
 begin
@@ -35,9 +34,9 @@ begin
             DONE <= '0';
         elsif rising_edge(clk) and CNT<n then
             if R >= to_signed(0,2*n) then
-                R := R+R+R+R + signed(shift_right(D, 2*n - 2)) - shift_left(signed(resize(Z, 2*n)), 2) - to_signed(1, 2*n);
+                R := (R sll 2) + signed(shift_right(D, 2*n - 2)) - shift_left(signed(resize(Z, 2*n)), 2) - to_signed(1, 2*n);
             else
-                R := R+R+R+R + signed(shift_right(D, 2*n - 2)) + shift_left(signed(resize(Z, 2*n)), 2) + to_signed(3, 2*n);
+                R := (R sll 2) + signed(shift_right(D, 2*n - 2)) + shift_left(signed(resize(Z, 2*n)), 2) + to_signed(3, 2*n);
             end if;
 		
             if R >= to_signed(0,2*n) then

@@ -7,7 +7,7 @@ entity REGLD_SR is -- Register with load and right-shift
   Port ( clk, reset, load, sl, sr : in std_logic;
          nb_dec: in integer;
          D: in std_logic_vector( nb_bits-1 downto 0);
-	 Din_tot: in std_logic_vector( nb_bits-1 downto 0);
+	       Din_tot: in std_logic_vector( nb_bits-1 downto 0);
          -- Dout : out std_logic; -- LSB output
          Q: out std_logic_vector(nb_bits-1 downto 0)
   );
@@ -34,8 +34,8 @@ Din <= Din_tot(nb_dec downto 0);
         Sint <= Din & Sint(nb_bits-1 downto nb_dec);
       elsif sl = '1' then
         Sint <= Sint(nb_bits-1-nb_dec downto 0) & Din;
-      elsif ssl = '1' then -- ssl : décalage à gauche signé
-        Sint <= Sint(
+      -- elsif ssl = '1' then -- ssl : dï¿½calage ï¿½ gauche signï¿½
+      --   Sint <= std_logic_vector(shift_left(signed(Sint),nb_dec))
       end if;
     end if;
  end process P1;
