@@ -49,9 +49,9 @@ OC: process(current_state) -- output computation
       i <= 0;
     when exe1_1state => done <= '0'; 
       if R >= to_signed(0,n) then -- res_inter = -4Z - 1
-        sig_A <= std_logic_vector(-(signed(Z) sll 2));
+        sig_A <= std_logic_vector((z sll 2));
         sig_B <= "1"; -- -1
-        sig_add <= '0';
+        sig_add <= '1';
         res_inter <= signed(sig_sum);
       else -- res_inter = 4Z + 3
         sig_A <= std_logic_vector((Z sll 2)); -- 4Z
@@ -60,10 +60,17 @@ OC: process(current_state) -- output computation
         res_inter <= signed(sig_sum);
       end if;
     when exe1_2state => done <= '0';  -- res_inter  <= res_inter + D/2^(2n-2)
-      sig_A <= std_logic_vector(D srl 2*n - 2);
-      sig_B <= std_logic_vector(res_inter);
-      sig_add <= '1';
-      res_inter <= signed(sig_sum);
+      if R >= to_signed(0,n) then -- res_inter = -4Z - 1
+        sig_A <= std_logic_vector(D srl 2*n - 2);
+        sig_B <= std_logic_vector(res_inter);
+        sig_add <= '0';
+        res_inter <= signed(sig_sum);
+      else 
+        sig_A <= std_logic_vector(D srl 2*n - 2);
+        sig_B <= std_logic_vector(res_inter);
+        sig_add <= '1';
+        res_inter <= signed(sig_sum);
+      end if;
     when exe1_3state => done <= '0'; -- R <= 4R + res_inter
       sig_A <= std_logic_vector(R sll 2);
       sig_B <= std_logic_vector(res_inter);

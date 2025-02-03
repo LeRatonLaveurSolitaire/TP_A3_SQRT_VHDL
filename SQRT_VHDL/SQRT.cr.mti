@@ -7,6 +7,15 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity sqrt
 -- Compiling architecture arch of sqrt
 
+} {} {}} C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/control_unit.vhd {1 {vcom -work work -2002 -explicit C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/control_unit.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity control_unit
+-- Compiling architecture proced of control_unit
+
 } {} {}} C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd {2 {vcom -work work -2002 -explicit C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
