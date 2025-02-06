@@ -6,9 +6,12 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element $${FILENAME}
+   {
+   }
    element JTAG_UART
    {
       datum _sortIndex
@@ -113,19 +116,11 @@
          type = "String";
       }
    }
-   element SW.s1
+   element SDRAM.s1
    {
       datum baseAddress
       {
-         value = "17862688";
-         type = "String";
-      }
-   }
-   element ONCHIP.s1
-   {
-      datum baseAddress
-      {
-         value = "17842176";
+         value = "8388608";
          type = "String";
       }
    }
@@ -137,11 +132,19 @@
          type = "String";
       }
    }
-   element SDRAM.s1
+   element ONCHIP.s1
    {
       datum baseAddress
       {
-         value = "8388608";
+         value = "17842176";
+         type = "String";
+      }
+   }
+   element SW.s1
+   {
+      datum baseAddress
+      {
+         value = "17862688";
          type = "String";
       }
    }
@@ -173,10 +176,10 @@
  <parameter name="globalResetBus" value="false" />
  <parameter name="hdlLanguage" value="VERILOG" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName" value="top_nios_system.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1738224452745" />
+ <parameter name="timeStamp" value="1738840519606" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
@@ -346,7 +349,7 @@
   <parameter name="mmu_tlbNumWays" value="16" />
   <parameter name="mmu_processIDNumBits" value="8" />
   <parameter name="impl" value="Fast" />
-  <parameter name="icache_size" value="2048" />
+  <parameter name="icache_size" value="512" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="icache_ramBlockType" value="Automatic" />
   <parameter name="icache_numTCIM" value="0" />
@@ -355,7 +358,7 @@
   <parameter name="dcache_victim_buf_impl" value="ram" />
   <parameter name="debug_level" value="Level1" />
   <parameter name="debug_OCIOnchipTrace" value="_128" />
-  <parameter name="dcache_size" value="2048" />
+  <parameter name="dcache_size" value="512" />
   <parameter name="dcache_tagramBlockType" value="Automatic" />
   <parameter name="dcache_ramBlockType" value="Automatic" />
   <parameter name="dcache_numTCDM" value="0" />

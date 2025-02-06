@@ -1,5 +1,5 @@
 Assembler report for top_nios_system
-Thu Jan 30 10:08:15 2025
+Thu Feb 06 12:28:17 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -11,8 +11,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/secours/Documents/TP_A3_Nios/output_files/top_nios_system.sof
-  7. Assembler Device Options: C:/Users/secours/Documents/TP_A3_Nios/output_files/top_nios_system.pof
+  6. Assembler Device Options: C:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/Nios/output_files/top_nios_system.sof
+  7. Assembler Device Options: C:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/Nios/output_files/top_nios_system.pof
   8. Assembler Messages
 
 
@@ -39,7 +39,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Jan 30 10:08:15 2025 ;
+; Assembler Status      ; Successful - Thu Feb 06 12:28:17 2025 ;
 ; Revision Name         ; top_nios_system                       ;
 ; Top-level Entity Name ; top_nios_system                       ;
 ; Family                ; Cyclone II                            ;
@@ -90,37 +90,37 @@ applicable agreement for further details.
 +--------+-------------------------------+--------------+
 
 
-+------------------------------------------------------------------------+
-; Assembler Generated Files                                              ;
-+------------------------------------------------------------------------+
-; File Name                                                              ;
-+------------------------------------------------------------------------+
-; C:/Users/secours/Documents/TP_A3_Nios/output_files/top_nios_system.sof ;
-; C:/Users/secours/Documents/TP_A3_Nios/output_files/top_nios_system.pof ;
-+------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Assembler Generated Files                                                     ;
++-------------------------------------------------------------------------------+
+; File Name                                                                     ;
++-------------------------------------------------------------------------------+
+; C:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/Nios/output_files/top_nios_system.sof ;
+; C:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/Nios/output_files/top_nios_system.pof ;
++-------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/secours/Documents/TP_A3_Nios/output_files/top_nios_system.sof ;
-+----------------+---------------------------------------------------------------------------------+
-; Option         ; Setting                                                                         ;
-+----------------+---------------------------------------------------------------------------------+
-; Device         ; EP2C20F484C7                                                                    ;
-; JTAG usercode  ; 0x00553FD4                                                                      ;
-; Checksum       ; 0x00553FD4                                                                      ;
-+----------------+---------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/Nios/output_files/top_nios_system.sof ;
++----------------+----------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                ;
++----------------+----------------------------------------------------------------------------------------+
+; Device         ; EP2C20F484C7                                                                           ;
+; JTAG usercode  ; 0x00551F9D                                                                             ;
+; Checksum       ; 0x00551F9D                                                                             ;
++----------------+----------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/secours/Documents/TP_A3_Nios/output_files/top_nios_system.pof ;
-+--------------------+-----------------------------------------------------------------------------+
-; Option             ; Setting                                                                     ;
-+--------------------+-----------------------------------------------------------------------------+
-; Device             ; EPCS16                                                                      ;
-; JTAG usercode      ; 0x00000000                                                                  ;
-; Checksum           ; 0x1D817EB8                                                                  ;
-; Compression Ratio  ; 2                                                                           ;
-+--------------------+-----------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/Nios/output_files/top_nios_system.pof ;
++--------------------+------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                            ;
++--------------------+------------------------------------------------------------------------------------+
+; Device             ; EPCS16                                                                             ;
+; JTAG usercode      ; 0x00000000                                                                         ;
+; Checksum           ; 0x1D7E908B                                                                         ;
+; Compression Ratio  ; 2                                                                                  ;
++--------------------+------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -129,13 +129,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Jan 30 10:08:04 2025
+    Info: Processing started: Thu Feb 06 12:28:06 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off top_nios_system -c top_nios_system
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4599 megabytes
-    Info: Processing ended: Thu Jan 30 10:08:15 2025
+    Info: Peak virtual memory: 4601 megabytes
+    Info: Processing ended: Thu Feb 06 12:28:17 2025
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:02
 
