@@ -92,21 +92,28 @@ architecture top_nios_system_rtl of top_nios_system is
             sdram_ras_n   : out   std_logic;                                        -- ras_n
             sdram_we_n    : out   std_logic;                                        -- we_n
             sw_export     : in    std_logic_vector(9 downto 0)  := (others => 'X'); -- export
-            ledr_export   : out   std_logic_vector(9 downto 0)                      -- export
+            ledr_export   : out   std_logic_vector(9 downto 0);                     -- export
+				start_export  : out   std_logic;                                        -- export
+				a_export      : out   std_logic_vector(31 downto 0);                    -- export
+				result_export : in    std_logic_vector(15 downto 0) := (others => 'X'); -- export
+				done_export   : in    std_logic                     := 'X'              -- export
+	
         );
     end component nios_system;
 
 	
--- component sqrt
+ component sqrt_fast
 
-		-- generic(nb_bits : natural:=16); -- Number of bits of the square root result
-		-- port(	X : in std_logic_vector(31 downto 0);
-				-- start : in std_logic;
-				-- clk, reset : in std_logic;
-				-- Result : out std_logic_vector(15 downto 0);
-				-- done : out std_logic);
+		generic(n : integer:=16); -- Number of bits of the square root result
+		port(	CLK : in STD_LOGIC; -- clock
+        RST : in STD_LOGIC; -- Demarre le calcul sur front descendant de RST
+        start : in STD_LOGIC; --bit de start
+        A : in STD_LOGIC_VECTOR(2*n - 1 downto 0); -- nombre entier non signÃ© dont on veut calculer la racine carrÃ©e
+        Z_OUT : out STD_LOGIC_VECTOR(n - 1 downto 0); -- racine carrÃ©e de A
+        DONE : out STD_LOGIC -- = 1 lorsque le calcul est fini
+		  );
 
--- end component;
+ end component;
 
 -------------------------------------------------------------------------------
 --						   Parameter Declarations						  --
@@ -119,7 +126,7 @@ architecture top_nios_system_rtl of top_nios_system is
 -- Used to connect the Nios 2 system clock to the non-shifted output of the PLL
 signal			 system_clock : STD_LOGIC;
 
-signal sig_X : std_logic_vector(31 downto 0);
+signal sig_A : std_logic_vector(31 downto 0);
 signal sig_Res : std_logic_vector(15 downto 0);
 signal sig_done, sig_start, sig_reset : std_logic;
 
@@ -181,21 +188,27 @@ DRAM_LDQM	<= DRAM_DQM(0);
             sdram_ras_n   => DRAM_RAS_N,   --          .ras_n
             sdram_we_n    => DRAM_WE_N,    --          .we_n
             sw_export     => SW,     --        sw.export
-            ledr_export   => LEDR    --      ledr.export
+            ledr_export   => LEDR,   --      ledr.export
+				start_export  => sig_start,    -- start.export
+				a_export      => sig_A,        -- a.export
+				result_export => sig_Res,      -- result.export
+				done_export   => sig_done      -- done.export
+				
         );
 
 	
---square_root: sqrt
---	generic map (nb_bits => 16)
---	port map (X => sig_X,
---				start => sig_start,
---				clk => CLOCK_50,
---				reset => sig_reset,
---				Result => sig_Res,
---				done => sig_done
---	);
---	
---	sig_reset <= not KEY(0); -- if reset is active high, else sig_reset <= KEY(0);
+square_root: sqrt_fast
+	generic map (n => 16)
+	port map (
+				CLK => CLOCK_50,
+				RST => sig_reset,
+				start => sig_start,
+				A => sig_A,
+				Z_OUT => sig_Res,
+				DONE => sig_done
+	);
+	
+sig_reset <= not KEY(0); -- if reset is active high, else sig_reset <= KEY(0);
 
 end top_nios_system_rtl;
 

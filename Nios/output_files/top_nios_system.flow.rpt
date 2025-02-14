@@ -1,5 +1,5 @@
 Flow report for top_nios_system
-Thu Jan 30 10:09:14 2025
+Thu Feb 13 11:54:06 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Thu Jan 30 10:09:14 2025            ;
+; Flow Status                        ; Successful - Thu Feb 13 11:54:06 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; top_nios_system                                  ;
 ; Top-level Entity Name              ; top_nios_system                                  ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C20F484C7                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 4,589 / 18,752 ( 24 % )                          ;
-;     Total combinational functions  ; 4,093 / 18,752 ( 22 % )                          ;
+; Total logic elements               ; 4,581 / 18,752 ( 24 % )                          ;
+;     Total combinational functions  ; 4,088 / 18,752 ( 22 % )                          ;
 ;     Dedicated logic registers      ; 2,907 / 18,752 ( 16 % )                          ;
 ; Total registers                    ; 2975                                             ;
 ; Total pins                         ; 208 / 315 ( 66 % )                               ;
 ; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 178,304 / 239,616 ( 74 % )                       ;
+; Total memory bits                  ; 151,968 / 239,616 ( 63 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 4 / 52 ( 8 % )                                   ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                                   ;
 +------------------------------------+--------------------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/30/2025 10:06:31 ;
+; Start date & time ; 02/13/2025 11:51:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top_nios_system     ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 181124908923095.173822799101408       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 181124908923095.173944391103676       ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
@@ -94,12 +94,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:14     ; 1.0                     ; 4795 MB             ; 00:00:31                           ;
-; Fitter                    ; 00:00:20     ; 2.3                     ; 5625 MB             ; 00:00:16                           ;
-; Assembler                 ; 00:00:11     ; 1.0                     ; 4599 MB             ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:01:21     ; 1.0                     ; 4806 MB             ; 00:00:44                           ;
+; Fitter                    ; 00:00:20     ; 1.0                     ; 5623 MB             ; 00:00:17                           ;
+; Assembler                 ; 00:00:11     ; 1.0                     ; 4595 MB             ; 00:00:02                           ;
 ; TimeQuest Timing Analyzer ; 00:00:08     ; 1.0                     ; 4642 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:15     ; 1.0                     ; 4601 MB             ; 00:00:03                           ;
-; Total                     ; 00:02:08     ; --                      ; --                  ; 00:00:52                           ;
+; EDA Netlist Writer        ; 00:00:15     ; 1.0                     ; 4614 MB             ; 00:00:03                           ;
+; Total                     ; 00:02:15     ; --                      ; --                  ; 00:01:07                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

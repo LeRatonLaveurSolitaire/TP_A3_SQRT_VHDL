@@ -151,22 +151,59 @@ R12
 R13
 !s100 Hcj2lzVCiX8]RQ9JUCF9D2
 !i10b 1
+Esqrt_fast
+Z35 w1739441015
+R2
+R3
+R4
+Z36 dC:\Users\TEMP\Documents\TP_A3_SQRT_VHDL\SQRT_VHDL
+Z37 8C:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_fast.vhd
+Z38 FC:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_fast.vhd
+l0
+L7
+VAOPDH@`XVcgh?YOOQZ8a_3
+!s100 OD4R26NY7Z[8WBPJ>@[1K3
+R8
+32
+!i10b 1
+Z39 !s108 1739441045.945000
+Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_fast.vhd|
+Z41 !s107 C:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_fast.vhd|
+R12
+R13
+Aarch
+R2
+R3
+R4
+DEx4 work 9 sqrt_fast 0 22 AOPDH@`XVcgh?YOOQZ8a_3
+l30
+L22
+VYj4c@@O@loGJglOfOfMQz3
+!s100 Wo0JFD7QUkTS>J==nRZln0
+R8
+32
+!i10b 1
+R39
+R40
+R41
+R12
+R13
 Esqrt_seq
-Z35 w1738581196
+Z42 w1738581196
 R2
 R3
 R4
 R5
-Z36 8C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_small.vhd
-Z37 FC:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_small.vhd
+Z43 8C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_small.vhd
+Z44 FC:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_small.vhd
 l0
 L5
 Vd:Qo9[eB@mgTSR5Ikaf8X0
 R8
 32
-Z38 !s108 1738586953.261000
-Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_small.vhd|
-Z40 !s107 C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_small.vhd|
+Z45 !s108 1738586953.261000
+Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_small.vhd|
+Z47 !s107 C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/sqrt_small.vhd|
 R12
 R13
 !s100 =`zR73RJF;IWfYHcTDgN41
@@ -177,15 +214,15 @@ R14
 R2
 R3
 R4
-Z41 DEx4 work 8 sqrt_seq 0 22 d:Qo9[eB@mgTSR5Ikaf8X0
+Z48 DEx4 work 8 sqrt_seq 0 22 d:Qo9[eB@mgTSR5Ikaf8X0
 l30
 L18
 VbD6JO@aEePUQ<HQMUF7>U2
 R8
 32
-R38
-R39
-R40
+R45
+R46
+R47
 R12
 R13
 !s100 e9NS<5fClTJeXRz:?CUUd3
@@ -202,70 +239,70 @@ L17
 VI<?_h[Dk61zl2OD<m@;KM3
 R8
 32
-R39
+R46
 R12
 R13
 w1738579692
-R40
+R47
 !s108 1738579962.147000
 !s100 1Ad^B1a_Nff9@B8UBWA<V0
 !i10b 1
 Etestbench
-Z42 w1738581356
+Z49 w1738581356
 R2
 R3
 R4
 R5
-Z43 8C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd
-Z44 FC:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd
+Z50 8C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd
+Z51 FC:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd
 l0
 L6
 V=7i18dA^hcQ8Hmiljmd6N1
-!s100 n5T`64RGY_Q3ASKnj9OCO3
 R8
 32
-!i10b 1
-Z45 !s108 1738586953.614000
-Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd|
-Z47 !s107 C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd|
+Z52 !s108 1738586953.614000
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd|
+Z54 !s107 C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_small.vhd|
 R12
 R13
+!s100 n5T`64RGY_Q3ASKnj9OCO3
+!i10b 1
 Atest_sqrt_small
-R41
+R48
 R2
 R3
 R4
-Z48 DEx4 work 9 testbench 0 22 =7i18dA^hcQ8Hmiljmd6N1
+Z55 DEx4 work 9 testbench 0 22 =7i18dA^hcQ8Hmiljmd6N1
 l17
 L9
-Z49 VbG^35HUXjn9zd@lH=5kKZ1
-Z50 !s100 fj:=aYb9PAS;P?URI3AXG3
+VbG^35HUXjn9zd@lH=5kKZ1
 R8
 32
-!i10b 1
-R45
-R46
-R47
+R52
+R53
+R54
 R12
 R13
+!s100 fj:=aYb9PAS;P?URI3AXG3
+!i10b 1
 Atest_sqrt_fast
 R34
 R2
 R3
 R4
-R48
+R55
 l16
 L9
 VYOIo_C8Q[G7eVnb9TKVL71
-!s100 ]jGJf:G=To:]7^>f^Z1Yd3
 R8
 32
-!s108 1738586953.448000
-!s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd|
-!s107 C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd|
 R12
 R13
 FC:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd
 w1737027430
 8C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd
+!s100 ]jGJf:G=To:]7^>f^Z1Yd3
+!s108 1738586953.448000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd|
+!s107 C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/SQRT_VHDL/testbench_fast.vhd|
 !i10b 1

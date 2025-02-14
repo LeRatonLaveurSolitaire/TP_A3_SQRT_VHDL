@@ -1,4 +1,10 @@
 
+State Machine - |top_nios_system|sqrt_fast:square_root|current_state
+Name current_state.end_state current_state.exec_state current_state.wait_state 
+current_state.wait_state 0 0 0 
+current_state.exec_state 0 1 1 
+current_state.end_state 1 0 1 
+
 State Machine - |top_nios_system|nios_system:u0|nios_system_NIOS:nios|nios_system_NIOS_nios2_oci:the_nios_system_NIOS_nios2_oci|nios_system_NIOS_jtag_debug_module_wrapper:the_nios_system_NIOS_jtag_debug_module_wrapper|nios_system_NIOS_jtag_debug_module_tck:the_nios_system_NIOS_jtag_debug_module_tck|DRsize
 Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
 DRsize.000 0 0 0 0 0 0 

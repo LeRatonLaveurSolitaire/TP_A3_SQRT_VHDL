@@ -6,9 +6,20 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element $${FILENAME}
+   {
+   }
+   element A
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
    element JTAG_UART
    {
       datum _sortIndex
@@ -31,6 +42,11 @@
       {
          value = "5";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
       }
    }
    element ONCHIP
@@ -105,11 +121,35 @@
          type = "String";
       }
    }
+   element done
+   {
+      datum _sortIndex
+      {
+         value = "14";
+         type = "int";
+      }
+   }
    element NIOS.jtag_debug_module
    {
       datum baseAddress
       {
          value = "17860608";
+         type = "String";
+      }
+   }
+   element result
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
+   element SDRAM.s1
+   {
+      datum baseAddress
+      {
+         value = "8388608";
          type = "String";
       }
    }
@@ -121,14 +161,6 @@
          type = "String";
       }
    }
-   element ONCHIP.s1
-   {
-      datum baseAddress
-      {
-         value = "17842176";
-         type = "String";
-      }
-   }
    element TIMER.s1
    {
       datum baseAddress
@@ -137,12 +169,20 @@
          type = "String";
       }
    }
-   element SDRAM.s1
+   element ONCHIP.s1
    {
       datum baseAddress
       {
-         value = "8388608";
+         value = "17842176";
          type = "String";
+      }
+   }
+   element start
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
       }
    }
    element sysid
@@ -173,10 +213,10 @@
  <parameter name="globalResetBus" value="false" />
  <parameter name="hdlLanguage" value="VERILOG" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName" value="top_nios_system.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1738224452745" />
+ <parameter name="timeStamp" value="1739433846893" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
@@ -196,6 +236,22 @@
  <interface
    name="ledr"
    internal="LEDR.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="start"
+   internal="start.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface name="a" internal="A.external_connection" type="conduit" dir="end" />
+ <interface
+   name="result"
+   internal="result.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="done"
+   internal="done.external_connection"
    type="conduit"
    dir="end" />
  <module kind="clock_source" version="13.0" enabled="1" name="clk_0">
@@ -346,7 +402,7 @@
   <parameter name="mmu_tlbNumWays" value="16" />
   <parameter name="mmu_processIDNumBits" value="8" />
   <parameter name="impl" value="Fast" />
-  <parameter name="icache_size" value="2048" />
+  <parameter name="icache_size" value="512" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="icache_ramBlockType" value="Automatic" />
   <parameter name="icache_numTCIM" value="0" />
@@ -355,7 +411,7 @@
   <parameter name="dcache_victim_buf_impl" value="ram" />
   <parameter name="debug_level" value="Level1" />
   <parameter name="debug_OCIOnchipTrace" value="_128" />
-  <parameter name="dcache_size" value="2048" />
+  <parameter name="dcache_size" value="512" />
   <parameter name="dcache_tagramBlockType" value="Automatic" />
   <parameter name="dcache_ramBlockType" value="Automatic" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -465,6 +521,74 @@
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="10" />
+  <parameter name="clockRate" value="50000000" />
+ </module>
+ <module
+   kind="altera_avalon_pio"
+   version="13.0.1.99.2"
+   enabled="1"
+   name="start">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+  <parameter name="clockRate" value="50000000" />
+ </module>
+ <module kind="altera_avalon_pio" version="13.0.1.99.2" enabled="1" name="A">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+  <parameter name="clockRate" value="50000000" />
+ </module>
+ <module
+   kind="altera_avalon_pio"
+   version="13.0.1.99.2"
+   enabled="1"
+   name="result">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="16" />
+  <parameter name="clockRate" value="50000000" />
+ </module>
+ <module
+   kind="altera_avalon_pio"
+   version="13.0.1.99.2"
+   enabled="1"
+   name="done">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
   <parameter name="clockRate" value="50000000" />
  </module>
  <connection
@@ -690,11 +814,6 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
-   kind="clock"
-   version="13.0"
-   start="up_clocks_0.sys_clk"
-   end="LEDR.clk" />
- <connection
    kind="reset"
    version="13.0"
    start="up_clocks_0.sys_clk_reset"
@@ -714,6 +833,47 @@
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="clock"
+   version="13.0"
+   start="up_clocks_0.sys_clk"
+   end="LEDR.clk" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="up_clocks_0.sys_clk_reset"
+   end="start.reset" />
+ <connection
+   kind="clock"
+   version="13.0"
+   start="up_clocks_0.sys_clk"
+   end="start.clk" />
+ <connection kind="clock" version="13.0" start="up_clocks_0.sys_clk" end="A.clk" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="up_clocks_0.sys_clk_reset"
+   end="A.reset" />
+ <connection
+   kind="clock"
+   version="13.0"
+   start="up_clocks_0.sys_clk"
+   end="result.clk" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="up_clocks_0.sys_clk_reset"
+   end="result.reset" />
+ <connection
+   kind="clock"
+   version="13.0"
+   start="up_clocks_0.sys_clk"
+   end="done.clk" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="up_clocks_0.sys_clk_reset"
+   end="done.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>

@@ -4,7 +4,20 @@
 make all 
 Info: Building ../sqrt_v2_bsp/
 make --no-print-directory -C ../sqrt_v2_bsp/
-[BSP build complete]
-[sqrt_v2 build complete]
+makefile:550: Warning: SOPC File C:/Users/TEMP/Documents/TP_A3_Nios/nios_system.sopcinfo could not be found.
+Makefile not up to date.
+settings.bsp has been modified since the BSP Makefile was generated.
+
+Generate the BSP to update the Makefile, and then build again.
+
+To generate from Eclipse:
+ 1. Right-click the BSP project.
+ 2. In the Nios II Menu, click Generate BSP.
+
+To generate from the command line:
+ nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>
+
+make[1]: *** [makefile] Error 1
+make: *** [../sqrt_v2_bsp/-recurs-make-lib] Error 2
 
 **** Build Finished ****
