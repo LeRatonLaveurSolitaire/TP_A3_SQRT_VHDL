@@ -1,0 +1,37 @@
+
+**** Build of configuration Nios II for project sqrt_q4_17_02 ****
+
+make all 
+Info: Building ../sqrt_q4_17_02_bsp/
+make --no-print-directory -C ../sqrt_q4_17_02_bsp/
+[BSP build complete]
+Info: Linking sqrt_q4_17_02.elf
+nios2-elf-g++  -T'../sqrt_q4_17_02_bsp//linker.x' -msys-crt0='../sqrt_q4_17_02_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../sqrt_q4_17_02_bsp/  -msmallc  -Wl,-Map=sqrt_q4_17_02.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o sqrt_q4_17_02.elf obj/default/hello_world.o -lm 
+nios2-elf-insert sqrt_q4_17_02.elf --thread_model hal --cpu_name NIOS --qsys true --simulation_enabled false --id 0 --sidp 0x1109038 --timestamp 1739791188 --stderr_dev JTAG_UART --stdin_dev JTAG_UART --stdout_dev JTAG_UART --sopc_system_name nios_system --quartus_project_dir "C:/Users/secours/Documents/TP_A3_SQRT_VHDL/TP_A3_SQRT_VHDL/Nios" --sopcinfo C:/Users/secours/Documents/TP_A3_SQRT_VHDL/TP_A3_SQRT_VHDL/Nios/nios_system.sopcinfo
+Info: (sqrt_q4_17_02.elf) 10 KBytes program size (code + initialized data).
+Info:                     8181 KBytes free for stack + heap.
+Info: Creating sqrt_q4_17_02.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sqrt_q4_17_02.elf >sqrt_q4_17_02.objdump
+[sqrt_q4_17_02 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sqrt_q4_17_02 ****
+
+make all 
+Info: Building ../sqrt_q4_17_02_bsp/
+make --no-print-directory -C ../sqrt_q4_17_02_bsp/
+[BSP build complete]
+[sqrt_q4_17_02 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sqrt_q4_17_02 ****
+
+make all 
+Info: Building ../sqrt_q4_17_02_bsp/
+make --no-print-directory -C ../sqrt_q4_17_02_bsp/
+[BSP build complete]
+[sqrt_q4_17_02 build complete]
+
+**** Build Finished ****
