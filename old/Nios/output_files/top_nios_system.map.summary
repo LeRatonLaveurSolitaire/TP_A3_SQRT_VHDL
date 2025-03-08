@@ -1,0 +1,23 @@
+<<<<<<< HEAD:Nios/output_files/top_nios_system.map.summary
+Analysis & Synthesis Status : Successful - Thu Feb 13 11:53:06 2025
+=======
+Analysis & Synthesis Status : Successful - Thu Feb 06 12:27:44 2025
+>>>>>>> c77ccad3df62797458cf513265f9cafb82d4fc55:old/Nios/output_files/top_nios_system.map.summary
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : top_nios_system
+Top-level Entity Name : top_nios_system
+Family : Cyclone II
+<<<<<<< HEAD:Nios/output_files/top_nios_system.map.summary
+Total logic elements : 5,054
+    Total combinational functions : 4,082
+=======
+Total logic elements : 5,013
+    Total combinational functions : 4,041
+>>>>>>> c77ccad3df62797458cf513265f9cafb82d4fc55:old/Nios/output_files/top_nios_system.map.summary
+    Dedicated logic registers : 3,023
+Total registers : 3023
+Total pins : 208
+Total virtual pins : 0
+Total memory bits : 151,968
+Embedded Multiplier 9-bit elements : 4
+Total PLLs : 1

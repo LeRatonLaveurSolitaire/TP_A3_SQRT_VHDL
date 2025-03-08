@@ -1,0 +1,102 @@
+-- nios_system_sqrt_0.vhd
+
+-- This file was auto-generated as a prototype implementation of a module
+-- created in component editor.  It ties off all outputs to ground and
+-- ignores all inputs.  It needs to be edited to make it do something
+-- useful.
+-- 
+-- This file will not be automatically regenerated.  You should check it in
+-- to your version control system if you want to keep it.
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity sqrt is
+	generic(
+		n : integer :=32
+	);
+	port (
+		clk    : in  std_logic                     := '0';             -- nios_system_sqrt_0.clk
+		reset  : in  std_logic                     := '0';             --                   .reset
+		clk_en : in  std_logic                     := '0';             --                   .clk_en
+		start  : in  std_logic                     := '0';             --                   .start
+		done   : out std_logic;                                        --                   .done
+		dataa  : in  std_logic_vector(31 downto 0) := (others => '0'); --                   .dataa
+		result : out std_logic_vector(31 downto 0)                     --                   .result
+	);
+end entity sqrt;
+
+architecture rtl of sqrt is
+    signal D : unsigned(2*n - 1 downto 0);   
+    signal Z : unsigned(n - 1 downto 0);
+    signal CNT : unsigned(n - 1 downto 0);
+    
+    type state is (wait_state, exec_state, end_state);
+    signal current_state, next_state : state;
+    
+begin
+
+CSM: process(clk, RESET) -- current state memorization
+  begin
+  if (RESET = '1') then
+    current_state <= wait_state;
+  elsif (clk'event and (clk = '1') and (CLK_EN = '1')) then
+    current_state <= next_state;
+  end if;
+end process CSM;
+
+NSC: process(current_state,start) -- next state computation
+  begin
+  case current_state is
+    when wait_state => if start = '1' then
+                          next_state <= exec_state;
+                       else
+                          next_state <= wait_state;
+                       end if;
+    when exec_state => if CNT = N then
+                          next_state <= end_state;
+                      else
+                          next_state <= exec_state;
+                    end if; 
+  when end_state => if start = '0' then
+                        next_state <= wait_state;
+                    else 
+                        next_state <= end_state;  
+                    end if;
+end case;          
+end process NSC;
+
+sqrt_sequential: process(current_state)
+	variable R : signed(2*n - 1 downto 0);
+    begin
+      case current_state is
+        when wait_state =>
+            D <= unsigned(dataa);
+            R := to_signed(0,2*n);
+            Z <= to_unsigned(0,n);
+            CNT <=  to_unsigned(0,n);
+            DONE <= '0';
+        when exec_state =>
+            if R >= to_signed(0,2*n) then
+              R := (R sll 2) + signed(shift_right(D, 2*n - 2)) - shift_left(signed(resize(Z, 2*n)), 2) - to_signed(1, 2*n);
+            else
+              R := (R sll 2) + signed(shift_right(D, 2*n - 2)) + shift_left(signed(resize(Z, 2*n)), 2) + to_signed(3, 2*n);
+            end if;
+  		
+            if R >= to_signed(0,2*n) then
+              Z <= (Z sll 1) + 1;
+            else 
+              Z <= (Z sll 1);
+            end if;
+            D <= D Sll 2;
+              
+         when end_state =>     
+              CNT <= CNT + 1;
+            RESULT <= std_logic_vector(Z);
+            DONE <='1';
+    end case;
+    end process sqrt_sequential;
+    
+
+end architecture rtl; -- of nios_system_sqrt_0

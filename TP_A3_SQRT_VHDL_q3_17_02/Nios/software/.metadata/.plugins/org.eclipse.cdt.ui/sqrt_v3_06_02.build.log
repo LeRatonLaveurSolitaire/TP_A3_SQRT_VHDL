@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project sqrt_v3_06_02 ****
+
+make all 
+Info: Building ../sqrt_v3_06_02_bsp/
+make --no-print-directory -C ../sqrt_v3_06_02_bsp/
+[BSP build complete]
+[sqrt_v3_06_02 build complete]
+
+**** Build Finished ****

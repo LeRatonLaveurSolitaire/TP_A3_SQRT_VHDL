@@ -1,0 +1,92 @@
+/*
+ * "Hello World" example.
+ *
+ * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
+ * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example
+ * designs. It runs with or without the MicroC/OS-II RTOS and requires a STDOUT
+ * device in your system's hardware.
+ * The memory footprint of this hosted application is ~69 kbytes by default
+ * using the standard reference design.
+ *
+ * For a reduced footprint version of this template, and an explanation of how
+ * to reduce the memory footprint for a given application, see the
+ * "small_hello_world" template.
+ *
+ */
+
+#include <stddef.h>
+#include <stdio.h>
+#include "sys/alt_timestamp.h"
+#include "alt_types.h"
+#include "system.h"
+
+#define N 16
+#define GET_TIME (*snapl&0x0000FFFF)+((*snaph<<16)&0xFFFF0000)
+
+unsigned int sqrt(unsigned int A) {
+	unsigned int D = A;
+	int R = 0;
+	unsigned int Z = 0;
+	char i;
+
+	for (i = N - 1; i >= 0; i--) {
+		if (R >= 0) {
+			R = (R << 2) + (D >> (2*N -2)) - ((Z << 2) + 1);
+		}
+		else {
+			R = (R << 2) + (D >> (2*N -2)) + ((Z << 2) + 3);
+		}
+		if (R >= 0) {
+			Z = (Z << 1) + 1;
+		}
+		else {
+			Z = (Z << 1);
+		}
+		D = D << 2;
+	}
+	return Z;
+}
+
+int main()
+{
+  printf("Hello from Nios II!\n");
+
+  unsigned int tabInt[200];
+  int i = 0;
+  int j = 0;
+
+  for (i = 0; i < 200; i++) {
+	  tabInt[i] = 0;
+	  for (j = 0; j < i; j++) {
+		  tabInt[i] += i;
+	  }
+  }
+
+  alt_timestamp_start();
+
+  int *snapl = 0x81109010;
+  int *snaph = 0x81109014;
+  unsigned int tStart = 0;
+  unsigned int tEnd = 0;
+  unsigned int result;
+
+  // Temps début
+  (*snapl) = 1;
+  tStart = GET_TIME;
+
+  // Calcul racine 100 fois sur le tableau de taille 200 : 20000 calculs
+  for (i = 0; i < 100; i++) {
+	  for (j = 0; j < 200; j ++) {
+		  //result = sqrt(tabInt[j]);
+		  result = ALT_CI_NIOS_SYSTEM_SQRT_0_0(tabInt[j]);
+	  }
+  }
+
+  // Temps fin
+  (*snapl) = 1;
+  tEnd = GET_TIME;
+
+  printf("Time : %u, start : %u, end : %u \n", (tStart - tEnd >= 0) ? (tStart - tEnd) : (tStart + (0xFFFFFFFF - tEnd)), tStart, tEnd);
+
+  return 0;
+}

@@ -1,0 +1,159 @@
+Flow report for top_nios_system
+<<<<<<< HEAD:Nios/output_files/top_nios_system.flow.rpt
+Thu Feb 13 11:54:06 2025
+=======
+Thu Feb 06 12:28:42 2025
+>>>>>>> c77ccad3df62797458cf513265f9cafb82d4fc55:old/Nios/output_files/top_nios_system.flow.rpt
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Flow Summary                                                                          ;
++------------------------------------+--------------------------------------------------+
+<<<<<<< HEAD:Nios/output_files/top_nios_system.flow.rpt
+; Flow Status                        ; Successful - Thu Feb 13 11:54:06 2025            ;
+=======
+; Flow Status                        ; Successful - Thu Feb 06 12:28:42 2025            ;
+>>>>>>> c77ccad3df62797458cf513265f9cafb82d4fc55:old/Nios/output_files/top_nios_system.flow.rpt
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; top_nios_system                                  ;
+; Top-level Entity Name              ; top_nios_system                                  ;
+; Family                             ; Cyclone II                                       ;
+; Device                             ; EP2C20F484C7                                     ;
+; Timing Models                      ; Final                                            ;
+<<<<<<< HEAD:Nios/output_files/top_nios_system.flow.rpt
+; Total logic elements               ; 4,581 / 18,752 ( 24 % )                          ;
+;     Total combinational functions  ; 4,088 / 18,752 ( 22 % )                          ;
+=======
+; Total logic elements               ; 4,541 / 18,752 ( 24 % )                          ;
+;     Total combinational functions  ; 4,047 / 18,752 ( 22 % )                          ;
+>>>>>>> c77ccad3df62797458cf513265f9cafb82d4fc55:old/Nios/output_files/top_nios_system.flow.rpt
+;     Dedicated logic registers      ; 2,907 / 18,752 ( 16 % )                          ;
+; Total registers                    ; 2975                                             ;
+; Total pins                         ; 208 / 315 ( 66 % )                               ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 151,968 / 239,616 ( 63 % )                       ;
+; Embedded Multiplier 9-bit elements ; 4 / 52 ( 8 % )                                   ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                   ;
++------------------------------------+--------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+<<<<<<< HEAD:Nios/output_files/top_nios_system.flow.rpt
+; Start date & time ; 02/13/2025 11:51:51 ;
+=======
+; Start date & time ; 02/06/2025 12:26:36 ;
+>>>>>>> c77ccad3df62797458cf513265f9cafb82d4fc55:old/Nios/output_files/top_nios_system.flow.rpt
+; Main task         ; Compilation         ;
+; Revision Name     ; top_nios_system     ;
++-------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                           ;
++-------------------------------------+---------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------------+---------------+-------------+----------------+
+<<<<<<< HEAD:Nios/output_files/top_nios_system.flow.rpt
+; COMPILER_SIGNATURE_ID               ; 181124908923095.173944391103676       ; --            ; --          ; --             ;
+=======
+; COMPILER_SIGNATURE_ID               ; 181124908923095.173884119614188       ; --            ; --          ; --             ;
+>>>>>>> c77ccad3df62797458cf513265f9cafb82d4fc55:old/Nios/output_files/top_nios_system.flow.rpt
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
++-------------------------------------+---------------------------------------+---------------+-------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+<<<<<<< HEAD:Nios/output_files/top_nios_system.flow.rpt
+; Analysis & Synthesis      ; 00:01:21     ; 1.0                     ; 4806 MB             ; 00:00:44                           ;
+; Fitter                    ; 00:00:20     ; 1.0                     ; 5623 MB             ; 00:00:17                           ;
+; Assembler                 ; 00:00:11     ; 1.0                     ; 4595 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.0                     ; 4642 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:15     ; 1.0                     ; 4614 MB             ; 00:00:03                           ;
+; Total                     ; 00:02:15     ; --                      ; --                  ; 00:01:07                           ;
+=======
+; Analysis & Synthesis      ; 00:01:14     ; 1.0                     ; 4805 MB             ; 00:00:39                           ;
+; Fitter                    ; 00:00:19     ; 2.3                     ; 5619 MB             ; 00:00:16                           ;
+; Assembler                 ; 00:00:11     ; 1.0                     ; 4601 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 1.0                     ; 4647 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:14     ; 1.0                     ; 4610 MB             ; 00:00:03                           ;
+; Total                     ; 00:02:07     ; --                      ; --                  ; 00:01:01                           ;
+>>>>>>> c77ccad3df62797458cf513265f9cafb82d4fc55:old/Nios/output_files/top_nios_system.flow.rpt
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; a-151599         ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; a-151599         ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; a-151599         ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; a-151599         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; a-151599         ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off top_nios_system -c top_nios_system
+quartus_fit --read_settings_files=off --write_settings_files=off top_nios_system -c top_nios_system
+quartus_asm --read_settings_files=off --write_settings_files=off top_nios_system -c top_nios_system
+quartus_sta top_nios_system -c top_nios_system
+quartus_eda --read_settings_files=off --write_settings_files=off top_nios_system -c top_nios_system
+
+
+
