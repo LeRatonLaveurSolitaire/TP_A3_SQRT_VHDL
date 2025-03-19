@@ -20,12 +20,18 @@ end entity sqrt_fast;
 
 
 architecture arch of sqrt_fast is
-    signal D : unsigned(2*n - 1 downto 0);   
+    signal D : unsigned(2*n - 1 downto 0); 
+    signal Din : unsigned(2*n - 1 downto 0);   
     signal Z : unsigned(n - 1 downto 0);
+    signal Zin : unsigned(n - 1 downto 0);
+    --signal R : signed(2*n - 1 downto 0);
+    --signal Rin : signed(2*n - 1 downto 0);
     signal CNT : unsigned(n - 1 downto 0);
+    signal CNTin : unsigned(n - 1 downto 0);
     
     type state is (wait_state, exec_state, end_state);
-    signal current_state, next_state : state;
+    signal current_state : state;
+    signal next_state : state;
     
 begin
 
@@ -35,22 +41,26 @@ CSM: process(clk, rst) -- current state memorization
     current_state <= wait_state;
   elsif (clk'event and (clk = '1')) then
     current_state <= next_state;
+    D <= Din;
+    Z <= Zin;
+    --R <= Rin;
+    CNT <= CNTin;
   end if;
 end process CSM;
 
-NSC: process(current_state,start) -- next state computation
+NSC: process(current_state, start, A, Z, D, CNT) -- next state computation
   begin
   case current_state is
-    when wait_state => if start = '1' then
-                          next_state <= exec_state;
-                       else
-                          next_state <= wait_state;
-                       end if;
-    when exec_state => if CNT = N then
+    when wait_state => 
+    
+          if start = '1' then
+              next_state <= exec_state;
+          else
+              next_state <= wait_state;
+          end if;
+    when exec_state => if CNT = (n -1) then 
                           next_state <= end_state;
-                      else
-                          next_state <= exec_state;
-                    end if; 
+		                   end if;
   when end_state => if start = '0' then
                         next_state <= wait_state;
                     else 
@@ -59,32 +69,36 @@ NSC: process(current_state,start) -- next state computation
 end case;          
 end process NSC;
 
-sqrt_sequential: process(current_state)
-	variable R : signed(2*n - 1 downto 0);
+sqrt_sequential: process(current_state, A, Z, D, CNT)
+	variable Rvar : signed(2*n - 1 downto 0);
     begin
       case current_state is
         when wait_state =>
-            D <= unsigned(A);
-            R := to_signed(0,2*n);
-            Z <= to_unsigned(0,n);
-            CNT <=  to_unsigned(0,n);
+            Din <= unsigned(A);
+            Rvar := to_signed(0,2*n);
+            Zin <= to_unsigned(0,n);
+            CNTin <=  to_unsigned(0,n);
             DONE <= '0';
         when exec_state =>
-            if R >= to_signed(0,2*n) then
-              R := (R sll 2) + signed(shift_right(D, 2*n - 2)) - shift_left(signed(resize(Z, 2*n)), 2) - to_signed(1, 2*n);
+            if Rvar >= to_signed(0,2*n) then
+              Rvar := (Rvar sll 2) + signed(shift_right(D, 2*n - 2)) - shift_left(signed(resize(Z, 2*n)), 2) - to_signed(1, 2*n);
+	      --CNT <= to_unsigned(9,n);
             else
-              R := (R sll 2) + signed(shift_right(D, 2*n - 2)) + shift_left(signed(resize(Z, 2*n)), 2) + to_signed(3, 2*n);
+              Rvar := (Rvar sll 2) + signed(shift_right(D, 2*n - 2)) + shift_left(signed(resize(Z, 2*n)), 2) + to_signed(3, 2*n);
+	      --CNT <= to_unsigned(27,n);
             end if;
   		
-            if R >= to_signed(0,2*n) then
-              Z <= (Z sll 1) + 1;
+            if Rvar >= to_signed(0,2*n) then
+              Zin <= (Z sll 1) + 1;
+	      --CNT <= to_unsigned(10,n);
             else 
-              Z <= (Z sll 1);
+              Zin <= (Z sll 1);
+	      --CNT <= to_unsigned(4,n);
             end if;
-            D <= D Sll 2;
+            Din <= D Sll 2;
+	          CNTin <= CNT + 1;
               
          when end_state =>     
-              CNT <= CNT + 1;
             Z_OUT <= std_logic_vector(Z);
             DONE <='1';
     end case;

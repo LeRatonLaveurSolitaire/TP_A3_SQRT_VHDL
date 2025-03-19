@@ -1,0 +1,629 @@
+Analysis & Synthesis report for sqrt_fast
+Sat Mar 08 19:57:31 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |sqrt_fast|current_state
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |sqrt_fast
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Mar 08 19:57:31 2025           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; sqrt_fast                                       ;
+; Top-level Entity Name              ; sqrt_fast                                       ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 717                                             ;
+;     Total combinational functions  ; 717                                             ;
+;     Dedicated logic registers      ; 131                                             ;
+; Total registers                    ; 131                                             ;
+; Total pins                         ; 100                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20AF256A7      ;                    ;
+; Top-level entity name                                                      ; sqrt_fast          ; sqrt_fast          ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 20     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; sqrt_fast.vhd                    ; yes             ; User VHDL File  ; C:/Users/Thomas/Documents/GitHub/TP_A3_SQRT_VHDL/old/SQRT_VHDL/sqrt_fast.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimated Total logic elements              ; 717                     ;
+;                                             ;                         ;
+; Total combinational functions               ; 717                     ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 74                      ;
+;     -- 3 input functions                    ; 355                     ;
+;     -- <=2 input functions                  ; 288                     ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 438                     ;
+;     -- arithmetic mode                      ; 279                     ;
+;                                             ;                         ;
+; Total registers                             ; 131                     ;
+;     -- Dedicated logic registers            ; 131                     ;
+;     -- I/O registers                        ; 0                       ;
+;                                             ;                         ;
+; I/O pins                                    ; 100                     ;
+; Embedded Multiplier 9-bit elements          ; 0                       ;
+; Maximum fan-out node                        ; current_state.end_state ;
+; Maximum fan-out                             ; 225                     ;
+; Total fan-out                               ; 2357                    ;
+; Average fan-out                             ; 2.49                    ;
++---------------------------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |sqrt_fast                 ; 717 (717)         ; 131 (131)    ; 0           ; 0            ; 0       ; 0         ; 100  ; 0            ; |sqrt_fast          ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |sqrt_fast|current_state                                                                 ;
++--------------------------+-------------------------+--------------------------+--------------------------+
+; Name                     ; current_state.end_state ; current_state.exec_state ; current_state.wait_state ;
++--------------------------+-------------------------+--------------------------+--------------------------+
+; current_state.wait_state ; 0                       ; 0                        ; 0                        ;
+; current_state.exec_state ; 0                       ; 1                        ; 1                        ;
+; current_state.end_state  ; 1                       ; 0                        ; 1                        ;
++--------------------------+-------------------------+--------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                      ;
++------------------------------------------------------+--------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal      ; Free of Timing Hazards ;
++------------------------------------------------------+--------------------------+------------------------+
+; Z_OUT[0]$latch                                       ; current_state.end_state  ; yes                    ;
+; Z_OUT[1]$latch                                       ; current_state.end_state  ; yes                    ;
+; Z_OUT[2]$latch                                       ; current_state.end_state  ; yes                    ;
+; Z_OUT[3]$latch                                       ; current_state.end_state  ; yes                    ;
+; Z_OUT[4]$latch                                       ; current_state.end_state  ; yes                    ;
+; Z_OUT[5]$latch                                       ; current_state.end_state  ; yes                    ;
+; Z_OUT[6]$latch                                       ; current_state.end_state  ; yes                    ;
+; Z_OUT[7]$latch                                       ; current_state.end_state  ; yes                    ;
+; Z_OUT[8]$latch                                       ; current_state.end_state  ; yes                    ;
+; Z_OUT[9]$latch                                       ; current_state.end_state  ; yes                    ;
+; Z_OUT[10]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[11]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[12]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[13]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[14]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[15]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[16]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[17]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[18]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[19]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[20]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[21]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[22]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[23]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[24]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[25]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[26]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[27]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[28]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[29]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[30]$latch                                      ; current_state.end_state  ; yes                    ;
+; Z_OUT[31]$latch                                      ; current_state.end_state  ; yes                    ;
+; DONE$latch                                           ; current_state.exec_state ; yes                    ;
+; Zin[0]                                               ; current_state.end_state  ; yes                    ;
+; next_state.end_state_2609                            ; Selector196              ; yes                    ;
+; Zin[1]                                               ; current_state.end_state  ; yes                    ;
+; Zin[2]                                               ; current_state.end_state  ; yes                    ;
+; Zin[3]                                               ; current_state.end_state  ; yes                    ;
+; Zin[4]                                               ; current_state.end_state  ; yes                    ;
+; Zin[5]                                               ; current_state.end_state  ; yes                    ;
+; Zin[6]                                               ; current_state.end_state  ; yes                    ;
+; Zin[7]                                               ; current_state.end_state  ; yes                    ;
+; Zin[8]                                               ; current_state.end_state  ; yes                    ;
+; Zin[9]                                               ; current_state.end_state  ; yes                    ;
+; Zin[10]                                              ; current_state.end_state  ; yes                    ;
+; Zin[11]                                              ; current_state.end_state  ; yes                    ;
+; Zin[12]                                              ; current_state.end_state  ; yes                    ;
+; Zin[13]                                              ; current_state.end_state  ; yes                    ;
+; Zin[14]                                              ; current_state.end_state  ; yes                    ;
+; Zin[15]                                              ; current_state.end_state  ; yes                    ;
+; Zin[16]                                              ; current_state.end_state  ; yes                    ;
+; Zin[17]                                              ; current_state.end_state  ; yes                    ;
+; Zin[18]                                              ; current_state.end_state  ; yes                    ;
+; Zin[19]                                              ; current_state.end_state  ; yes                    ;
+; Zin[20]                                              ; current_state.end_state  ; yes                    ;
+; Zin[21]                                              ; current_state.end_state  ; yes                    ;
+; Zin[22]                                              ; current_state.end_state  ; yes                    ;
+; Zin[23]                                              ; current_state.end_state  ; yes                    ;
+; Zin[24]                                              ; current_state.end_state  ; yes                    ;
+; Zin[25]                                              ; current_state.end_state  ; yes                    ;
+; Zin[26]                                              ; current_state.end_state  ; yes                    ;
+; Zin[27]                                              ; current_state.end_state  ; yes                    ;
+; Zin[28]                                              ; current_state.end_state  ; yes                    ;
+; Zin[29]                                              ; current_state.end_state  ; yes                    ;
+; Zin[30]                                              ; current_state.end_state  ; yes                    ;
+; Zin[31]                                              ; current_state.end_state  ; yes                    ;
+; next_state.exec_state_2618                           ; Selector196              ; yes                    ;
+; \sqrt_sequential:Rvar[61]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[60]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[59]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[58]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[57]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[56]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[55]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[54]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[53]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[52]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[51]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[50]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[49]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[48]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[47]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[46]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[45]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[44]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[43]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[42]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[41]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[40]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[39]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[38]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[37]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[36]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[35]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[34]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[33]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[32]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[31]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[30]                            ; current_state.end_state  ; yes                    ;
+; \sqrt_sequential:Rvar[29]                            ; current_state.end_state  ; yes                    ;
+; Number of user-specified and inferred latches = 227  ;                          ;                        ;
++------------------------------------------------------+--------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 131   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 128   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |sqrt_fast ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 32    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Mar 08 19:57:30 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sqrt_fast -c sqrt_fast
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file sqrt_fast.vhd
+    Info (12022): Found design unit 1: sqrt_fast-arch
+    Info (12023): Found entity 1: sqrt_fast
+Info (12127): Elaborating entity "sqrt_fast" for the top level hierarchy
+Warning (10631): VHDL Process Statement warning at sqrt_fast.vhd(51): inferring latch(es) for signal or variable "next_state", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at sqrt_fast.vhd(72): inferring latch(es) for signal or variable "Din", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at sqrt_fast.vhd(72): inferring latch(es) for signal or variable "Rvar", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at sqrt_fast.vhd(72): inferring latch(es) for signal or variable "Zin", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at sqrt_fast.vhd(72): inferring latch(es) for signal or variable "CNTin", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at sqrt_fast.vhd(72): inferring latch(es) for signal or variable "DONE", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at sqrt_fast.vhd(72): inferring latch(es) for signal or variable "Z_OUT", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "Z_OUT[0]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[1]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[2]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[3]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[4]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[5]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[6]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[7]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[8]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[9]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[10]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[11]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[12]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[13]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[14]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[15]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[16]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[17]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[18]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[19]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[20]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[21]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[22]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[23]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[24]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[25]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[26]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[27]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[28]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[29]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[30]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Z_OUT[31]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "DONE" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[0]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[1]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[2]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[3]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[4]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[5]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[6]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[7]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[8]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[9]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[10]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[11]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[12]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[13]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[14]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[15]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[16]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[17]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[18]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[19]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[20]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[21]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[22]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[23]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[24]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[25]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[26]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[27]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[28]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[29]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[30]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "CNTin[31]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[0]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[1]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[2]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[3]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[4]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[5]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[6]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[7]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[8]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[9]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[10]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[11]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[12]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[13]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[14]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[15]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[16]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[17]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[18]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[19]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[20]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[21]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[22]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[23]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[24]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[25]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[26]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[27]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[28]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[29]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[30]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Zin[31]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[0]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[1]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[2]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[3]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[4]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[5]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[6]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[7]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[8]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[9]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[10]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[11]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[12]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[13]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[14]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[15]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[16]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[17]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[18]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[19]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[20]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[21]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[22]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[23]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[24]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[25]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[26]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[27]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[28]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[29]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[30]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[31]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[32]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[33]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[34]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[35]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[36]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[37]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[38]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[39]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[40]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[41]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[42]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[43]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[44]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[45]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[46]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[47]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[48]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[49]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[50]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[51]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[52]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[53]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[54]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[55]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[56]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[57]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[58]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[59]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[60]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[61]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[62]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "sqrt_sequential:Rvar[63]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[0]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[1]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[2]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[3]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[4]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[5]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[6]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[7]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[8]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[9]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[10]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[11]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[12]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[13]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[14]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[15]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[16]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[17]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[18]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[19]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[20]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[21]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[22]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[23]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[24]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[25]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[26]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[27]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[28]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[29]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[30]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[31]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[32]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[33]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[34]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[35]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[36]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[37]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[38]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[39]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[40]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[41]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[42]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[43]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[44]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[45]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[46]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[47]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[48]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[49]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[50]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[51]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[52]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[53]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[54]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[55]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[56]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[57]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[58]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[59]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[60]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[61]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[62]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "Din[63]" at sqrt_fast.vhd(72)
+Info (10041): Inferred latch for "next_state.end_state" at sqrt_fast.vhd(51)
+Info (10041): Inferred latch for "next_state.exec_state" at sqrt_fast.vhd(51)
+Info (10041): Inferred latch for "next_state.wait_state" at sqrt_fast.vhd(51)
+Warning (13012): Latch next_state.end_state_2609 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.exec_state
+Warning (13012): Latch next_state.wait_state_2627 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.exec_state
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 947 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 67 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 847 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4656 megabytes
+    Info: Processing ended: Sat Mar 08 19:57:31 2025
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

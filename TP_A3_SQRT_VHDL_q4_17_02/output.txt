@@ -1,0 +1,3 @@
+Hello from Nios II!
+Start computingTime : 1242759, start : 4294956953, end : 4293714194 
+

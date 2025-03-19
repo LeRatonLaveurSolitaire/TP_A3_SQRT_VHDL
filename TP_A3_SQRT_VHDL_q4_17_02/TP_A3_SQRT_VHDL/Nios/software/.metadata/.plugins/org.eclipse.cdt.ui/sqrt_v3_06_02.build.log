@@ -1,0 +1,11 @@
+
+**** Build of configuration Nios II for project sqrt_v3_06_02 ****
+
+make all 
+Info: Building ../sqrt_v3_06_02_bsp/
+make --no-print-directory -C ../sqrt_v3_06_02_bsp/
+makefile:550: Warning: SOPC File C:/Users/TEMP/Documents/TP_A3_SQRT_VHDL/Nios/nios_system.sopcinfo could not be found.
+[BSP build complete]
+[sqrt_v3_06_02 build complete]
+
+**** Build Finished ****

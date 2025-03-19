@@ -1,0 +1,6 @@
+
+State Machine - |sqrt_fast|current_state
+Name current_state.end_state current_state.exec_state current_state.wait_state 
+current_state.wait_state 0 0 0 
+current_state.exec_state 0 1 1 
+current_state.end_state 1 0 1 
